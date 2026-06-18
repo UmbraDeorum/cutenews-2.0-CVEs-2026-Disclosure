@@ -2,9 +2,10 @@
 Cutenews (https://github.com/CuteNews/cutenews-2.0) Multiple CVEs 2026 Disclosure Repository
 
 **Vendor:** CuteNews
+
 **Affected Product:** [CuteNews v.2.1.2](https://github.com/CuteNews/cutenews-2.0) (last commit `16d630d`, Feb 21 2025)
+
 **Fix Status:** No fixed version at this time
-**Discoverer:** Kreon Papathanasiou
 
 ---
 
