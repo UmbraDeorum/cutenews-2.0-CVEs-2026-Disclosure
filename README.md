@@ -146,14 +146,15 @@ All vulnerabilities were identified via code review and confirmed using Firefox 
 **Deployment:**
 
 ```bash
-sudo apt-get install -y apache2 php php-gd libapache2-mod-php
+sudo apt install apache2 php php-gd libapache2-mod-php
 sudo apt install php php-gd php-mbstring php-xml php-curl libapache2-mod-php
 
 git clone https://github.com/CuteNews/cutenews-2.0.git
 sudo cp -r /home/kali/assessment/cutenews-2.0 /var/www/html/cutenews
 wget https://github.com/CuteNews/cutenews-2.0/releases/download/2.0.1/cdata.zip
 unzip cdata.zip -d cdata
-sudo cp cdata /var/www/html/cutenews
+sudo cp -r  cdata /var/www/html/cutenews
+sudo mkdir /var/www/html/cutenews/uploads
 sudo chown -R www-data:www-data /var/www/html/cutenews
 
 sudo systemctl restart apache2
