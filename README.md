@@ -15,7 +15,7 @@ Cutenews (https://github.com/CuteNews/cutenews-2.0) Multiple CVEs 2026 Disclosur
 | **Component** | `core/modules/media.php:175–255` — `upload_from_inet` (Media Manager) |
 | **Attack Type** | Remote |
 | **Impact** | Code Execution |
-| **CVSS3.1** | CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H **(7.2 High)** |
+| **CVSS:3.1** | CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:U/C:H/I:H/A:H **(7.2 High)** |
 
 **Description:**
 Unrestricted Upload of File with Dangerous Type in `core/modules/media.php` allows remote authenticated users with access to the Media Manager panel to execute arbitrary code in the context of the web application, leading to remote server access by triggering a reverse shell.
@@ -37,7 +37,7 @@ Any user with a role that can access the Media Manager panel can exploit an SSRF
 | **Component** | `index.php` |
 | **Attack Type** | Remote |
 | **Impact** | Escalation of Privileges, Information Disclosure, Content Manipulation/Defacement |
-| **CVSS3.1** | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L **(8.3 High)** |
+| **CVSS:3.1** | CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:L **(8.3 High)** |
 
 **Description:**
 Cross-Site Scripting (XSS) in `index.php` allows remote unauthenticated attackers to supply an arbitrarily named URL parameter key, with part of its name containing any URL-encoded common XSS payload (such as `"><script>alert(1)</script>`).
@@ -58,7 +58,7 @@ Supplying an arbitrarily named URL parameter key whose name contains a URL-encod
 | **Component** | `core/modules/media.php` — `upload_from_inet` (Media Manager) |
 | **Attack Type** | Remote |
 | **Impact** | Information Disclosure; use of the application server as a proxy for further attacks |
-| **CVSS3.1** | CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:N **(5.5 Medium)** |
+| **CVSS:3.1** | CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:N **(5.5 Medium)** |
 
 **Description:**
 CuteNews v.2.1.2 is vulnerable to Server-Side Request Forgery (SSRF) in the Media Manager's "Upload by URL" functionality.
@@ -80,7 +80,7 @@ The attacker must supply a URL pointing to an internal IP address (optionally wi
 | **Component** | `index.php` |
 | **Attack Type** | Local |
 | **Impact** | Escalation of Privileges, Information Disclosure |
-| **CVSS3.1** | CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L **(5.8 Medium)** |
+| **CVSS:3.1** | CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L **(5.8 Medium)** |
 
 **Description:**
 The value of the `Referer` header is copied into the response HTML unmodified and unescaped during POST requests to `index.php`.
@@ -101,7 +101,7 @@ A crafted `Referer` header value is reflected directly into the HTML response wi
 | **Component** | `/core/core.php`, line 2754 (`unserialize()` call) |
 | **Attack Type** | Remote |
 | **Impact** | Content injection in rendered response HTML |
-| **CVSS3.1** | CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L **(5.8 Medium)** |
+| **CVSS:3.1** | CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L **(5.8 Medium)** |
 
 **Description:**
 Deserialization of Untrusted Data of the `__post_data` parameter in `cn_parse_url()` allows a remote attacker to inject arbitrary values into internal request variables (including `__referer`) via a crafted base64-encoded serialized PHP payload submitted as a POST parameter.
@@ -126,7 +126,7 @@ This vulnerability was chained with improper neutralization of the `__referer` v
 | **Component** | `/core/core.php`, line 2774 (`$_POST['__referer'] = $post_data['__referer'];`) |
 | **Attack Type** | Remote |
 | **Impact** | Self-XSS |
-| **CVSS3.1** | CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L **(5.2 Medium)** |
+| **CVSS:3.1** | CVSS:3.1/AV:L/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:L **(5.2 Medium)** |
 
 **Description:**
 Improper neutralization of the `__referer` value allows a remote attacker to execute arbitrary JavaScript in the context of an authenticated user's session via a `javascript:` URI rendered as an unsanitized clickable link on the `msg_info` page.
